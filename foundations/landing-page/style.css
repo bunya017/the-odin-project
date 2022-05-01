@@ -79,3 +79,12 @@ body {
 a {
   color: #e5e7eb;
 }
+
+.call-to-action {
+  display: flex;
+  border-radius: 6px;
+  padding: 48px;
+  align-items: center;
+  background-color:  #3882f6;
+  justify-content: space-around;
+}
