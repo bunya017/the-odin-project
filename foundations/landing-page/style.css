@@ -88,3 +88,21 @@ a {
   background-color:  #3882f6;
   justify-content: space-around;
 }
+
+.quote {
+  padding: 0 150px;
+  background-color: #e5e7eb;
+  font-size: 36px;
+  font-weight: lighter;
+  font-style: italic;
+  color: #1f2937;
+}
+
+.quoted-from {
+  display: flex;
+  color: #1f2937;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: normal;
+  justify-content: flex-end;
+}
