@@ -8,7 +8,7 @@ function playRound (playerSelection, computerSelection) {
   computerSelection = computerSelection.toLowerCase()
 
   if (playerSelection === computerSelection) {
-    return 'Tie!'
+    return 'It\'s a tie!'
   } else if ((playerSelection === 'rock') && (computerSelection === 'paper')) {
     return 'You lose! Paper beats Rock'
   } else if ((playerSelection === 'rock') && (computerSelection === 'scissors')) {
@@ -24,21 +24,35 @@ function playRound (playerSelection, computerSelection) {
   }
 }
 
-function game () {
-  let player = 0
-  let computer = 0
-  while ((player + computer) < 5){
-    const playerSelection = prompt('Rock, Paper, Scissors:')
+function incrementScore (id) {
+  const scoreEl = document.getElementById(id)
+  const currentScore = Number(scoreEl.innerText)
+  scoreEl.innerText = currentScore + 1
+}
+
+function play (playerSelection) {
+  const statusEl = document.getElementById('status')
+  let playerScore = Number(document.getElementById('player-score').innerText)
+  let computerScore = Number(document.getElementById('computer-score').innerText)
+  if ((playerScore < 5) && (computerScore < 5)) {
     const computerSelection = computerPlay()
     const score = playRound(playerSelection, computerSelection)
     if (score.indexOf('You win!') > -1) {
-      player++
+      incrementScore('player-score')
+      statusEl.innerText = score
     } else if (score.indexOf('You lose!') > -1) {
-      computer++
+      incrementScore('computer-score')
+      statusEl.innerText = score
+    } else {
+      statusEl.innerText = score
+    }
+    playerScore = Number(document.getElementById('player-score').innerText)
+    computerScore = Number(document.getElementById('computer-score').innerText)
+    if ((playerScore > 4) || (computerScore > 4)) {
+      statusEl.innerText = (playerScore > computerScore) ?
+        'Congratulations! You won the game' :
+        'You lost the game'
     }
   }
-  const winner = (player > computer) ? 'You win!' : 'You lose'
-  console.log(`${winner} ${player}:${computer}`)
 }
 
-game()
