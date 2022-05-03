@@ -7,6 +7,23 @@
   <title>Rock Paper Scissors</title>
 </head>
 <body>
-
+  <div style="width: 100%; max-width: 250px;">
+    <div>
+      <div>
+        <h2>Rock, Paper, Scissors</h2>
+      </div>
+      <div id="status">Play</div>
+    </div>
+    <div style="padding: 24px 0;">
+      <div>Scores</div>
+      <div style="padding: 4px 0 16px 0;">You <span id="player-score">0</span>:<span id="computer-score">0</span> Computer</div>
+      <button onClick="reload()" style="font-size: 18px">Reset</button>
+    </div>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+      <button onClick="play('rock')" style="font-size: 24px;">Rock</button>
+      <button onClick="play('paper')" style="font-size: 24px;">Paper</button>
+      <button onClick="play('scissors')" style="font-size: 24px;">Scissors</button>
+    </div>
+  </div>
 </body>
 </html>
