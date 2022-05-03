@@ -56,3 +56,6 @@ function play (playerSelection) {
   }
 }
 
+function reload () {
+  return window.location.replace('')
+}
