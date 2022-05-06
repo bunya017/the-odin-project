@@ -67,3 +67,16 @@ function setOperator (operator) {
     document.getElementById('display').innerText = NUM1
   }
 }
+
+function operate () {
+  let equalsOperation
+  if ((NUM1 !== null) && (OPERATOR.length > 0) && (DISPLAY.length > 0)) {
+    equalsOperation = runOperation(OPERATOR, NUM1, Number(DISPLAY))
+    NUM1 = null
+    DISPLAY = equalsOperation
+    OPERATOR = ''
+  } else {
+    equalsOperation = DISPLAY
+  }
+  document.getElementById('display').innerText = equalsOperation
+}
