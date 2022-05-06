@@ -31,6 +31,14 @@ function addToDisplay (num) {
   }
   document.getElementById('display').innerText = DISPLAY
 }
+
+function clearDisplay () {
+  DISPLAY = ''
+  NUM1 = null
+  OPERATOR = ''
+  document.getElementById('display').innerText = DISPLAY
+}
+
 function runOperation (operator, num1, num2) {
   let result = ''
 
