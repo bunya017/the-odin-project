@@ -1,0 +1,19 @@
+#draw-space {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.square {
+  border: solid 1px #aeb4bd;
+}
+
+.buttons-div {
+  display: flex;
+  gap:  0 5px;
+  padding-bottom: 10px;
+}
+
+button {
+  font-size: 18px;
+}
