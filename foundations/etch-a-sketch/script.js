@@ -16,7 +16,7 @@ function draw () {
   ACTION = 'draw'
 }
 
-function drawSquares (num) {
+function drawSquares (num=16) {
   let spaceDiv = document.getElementById('draw-space')
   spaceDiv.innerHTML = ''
   for (let i = 0; i < num; i++) {
@@ -35,12 +35,14 @@ function drawSquares (num) {
 
 function init () {
   document.getElementById('colorPicker').value = '#fff'
-  drawSquares(32)
+  drawSquares(16)
 }
 
 function getSquareNum () {
   const num = Number(prompt('Enter number of squares (100 max):'))
-  if (num <= 100) {
+  if ((num <= 100) && (num !== 0) && (!isNaN(num))) {
     drawSquares(num)
+  } else {
+    drawSquares()
   }
 }
