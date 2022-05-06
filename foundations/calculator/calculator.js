@@ -1,6 +1,7 @@
 let DISPLAY = ''
 let NUM1 = null
 let OPERATOR = ''
+let EqualsButtonPressed = false
 
 function add (num1, num2) {
   return num1 + num2
@@ -20,6 +21,9 @@ function divide (num1, num2) {
 }
 
 function addToDisplay (num) {
+  if (EqualsButtonPressed) {
+    DISPLAY = ''
+  }
   if ((num === '.') && (DISPLAY.indexOf('.') === -1)) {
     if (DISPLAY.length === 0) {
       DISPLAY += `0${num}`
@@ -29,6 +33,7 @@ function addToDisplay (num) {
   } else if (num !== '.') {
     DISPLAY += `${num}`
   }
+  EqualsButtonPressed = false
   document.getElementById('display').innerText = DISPLAY
 }
 
@@ -75,6 +80,7 @@ function setOperator (operator) {
 
 function operate () {
   let equalsOperation
+  EqualsButtonPressed = true
   if ((NUM1 !== null) && (OPERATOR.length > 0) && (DISPLAY.length > 0)) {
     equalsOperation = runOperation(OPERATOR, NUM1, Number(DISPLAY))
     NUM1 = null
