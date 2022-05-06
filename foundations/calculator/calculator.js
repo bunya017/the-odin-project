@@ -21,20 +21,22 @@ function divide (num1, num2) {
 }
 
 function addToDisplay (num) {
-  if (EqualsButtonPressed) {
-    DISPLAY = ''
-  }
-  if ((num === '.') && (DISPLAY.indexOf('.') === -1)) {
-    if (DISPLAY.length === 0) {
-      DISPLAY += `0${num}`
-    } else {
+  if (DISPLAY.length < 19) {
+    if (EqualsButtonPressed) {
+      DISPLAY = ''
+    }
+    if ((num === '.') && (DISPLAY.indexOf('.') === -1)) {
+      if (DISPLAY.length === 0) {
+        DISPLAY += `0${num}`
+      } else {
+        DISPLAY += `${num}`
+      }
+    } else if (num !== '.') {
       DISPLAY += `${num}`
     }
-  } else if (num !== '.') {
-    DISPLAY += `${num}`
+    EqualsButtonPressed = false
+    document.getElementById('display').innerText = DISPLAY
   }
-  EqualsButtonPressed = false
-  document.getElementById('display').innerText = DISPLAY
 }
 
 function backspace () {
