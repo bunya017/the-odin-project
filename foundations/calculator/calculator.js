@@ -91,3 +91,16 @@ function operate () {
   }
   document.getElementById('display').innerText = equalsOperation
 }
+function listenToKeyPress () {
+  const NUMBERS = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0']
+  document.addEventListener('keydown', (e) => {
+    console.log(e.key)
+    if (`${e.key}` in NUMBERS) {
+      addToDisplay(`${e.key}`)
+    } else if (`${e.key.toLowerCase()}` === 'backspace') {
+      backspace()
+    }
+  })
+}
+
+listenToKeyPress()
