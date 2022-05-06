@@ -1,4 +1,7 @@
 let DISPLAY = ''
+let NUM1 = null
+let OPERATOR = ''
+
 function add (num1, num2) {
   return num1 + num2
 }
@@ -27,4 +30,32 @@ function addToDisplay (num) {
     DISPLAY += `${num}`
   }
   document.getElementById('display').innerText = DISPLAY
+}
+function runOperation (operator, num1, num2) {
+  let result = ''
+
+  if (`${operator}` === '+') {
+    result = add(num1, num2)
+  } else if (`${operator}` === '-') {
+    result = subtract(num1, num2)
+  } else if (`${operator}` === '*') {
+    result = multiply(num1, num2)
+  } else if (`${operator}` === '/') {
+    result = divide(num1, num2)
+  }
+
+  return (result === '') ? '' : result
+}
+
+function setOperator (operator) {
+  if ((DISPLAY.length > 0) && (NUM1 === null)) {
+    NUM1 = Number(DISPLAY)
+    OPERATOR = operator
+    DISPLAY = ''
+  } else if ((DISPLAY.length > 0) && (NUM1 !== null)) {
+    NUM1 = runOperation(OPERATOR, NUM1, Number(DISPLAY))
+    OPERATOR = operator
+    DISPLAY = ''
+    document.getElementById('display').innerText = NUM1
+  }
 }
