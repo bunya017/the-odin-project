@@ -1,0 +1,138 @@
+@font-face {
+  font-family: Norse-Bold;
+  src: url('https://cdn.statically.io/gh/TheOdinProject/theodinproject/efdc2888072f409e687d31dc580595dbe4fe0ff4/app/assets/fonts/Norse-Bold.otf');
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+body{
+  margin: 0;
+  background-color: #fbf5f1;
+  font-family: 'Poppins', sans-serif;
+}
+
+button {
+  color: white;
+  font-size: 18px;
+  padding: 12px 48px;
+  border: solid #c97946;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #c97946;
+}
+
+button:hover {
+  border: solid #a5643b;
+  background-color: #a5643b;
+}
+
+img {
+  height: 100%;
+  max-height: 100vh;
+}
+
+input {
+  width: 80%;
+  height: 20px;
+}
+
+label {
+  font-size: 12px;
+  color: #6a6868;
+}
+
+.container {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.container > * {
+  flex: 1 0px;
+}
+
+.side-img {
+  display: flex;
+  justify-content: center;
+}
+
+.main {
+  flex: 2 0px;
+  display: flex;
+  flex-flow: column;
+  padding-top: 84px;
+}
+
+.main-top {
+  padding: 36px;
+  display: flex;
+  flex-flow: column;
+  gap: 24px 0;
+}
+
+.form-top {
+  padding: 12px 48px 24px 48px;
+  background-color: white;
+  box-shadow: 0 5px 5px 1px #ccbdb5;
+}
+
+.form-bottom {
+  padding: 24px 36px;
+}
+
+.form-row {
+  display: flex;
+  gap: 12px 0;
+  flex-flow: row wrap;
+  width: 80%;
+  justify-content: space-between;
+}
+
+.form-col {
+  width: 50%;
+}
+
+.img-credit {
+  position: absolute;
+  bottom: 12px;
+  color: white;
+  padding: 8px;
+  background-color: #0006;
+}
+
+.img-credit > a {
+  color: white;
+}
+
+.odin {
+  top: 25%;
+  height: 90px;
+  width: 480px;
+  position: absolute;
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  background-color: #0006;
+}
+
+.odin > img {
+  padding: 0 4px;
+  height: 80%;
+}
+.odin > h1 {
+  color: white;
+  font-size: 52px;
+  font-family: Norse-Bold;
+}
+
+.italic {
+  font-style: italic;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+.form-top > h2 {
+  padding: 8px 0;
+}
